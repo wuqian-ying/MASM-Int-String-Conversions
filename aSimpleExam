@@ -1,0 +1,12 @@
+;why not do it?
+ConvertStringtoInt proc, straddr:dword, len:dword
+	mov ecx,len
+	mov esi,straddr
+	looop:
+	sub byte ptr [esi],30h
+	add eax,[esi]	
+	imul eax,10
+	inc esi
+	loop looop
+	ret
+ConvertStringtoInt endp
